@@ -4,14 +4,29 @@ package domain;
  * @author Evandro Santos
  */
 
-public class Cliente implements Persistente {
+public class Cliente {
+
+    private Long id;
+
+    private String codigo;
+
     private String nome;
-    private Long cpf;
-    private Long tel;
-    private String end;
-    private Integer numero;
-    private String cidade;
-    private String estado;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
     public String getNome() {
         return nome;
@@ -21,51 +36,5 @@ public class Cliente implements Persistente {
         this.nome = nome;
     }
 
-    public Long getCpf() {
-        return cpf;
-    }
 
-    public void setCpf(Long cpf) {
-        this.cpf = cpf;
-    }
-
-    public Long getTel() {
-        return tel;
-    }
-
-    public void setTel(Long tel) {
-        this.tel = tel;
-    }
-
-    public String getEnd() {
-        return end;
-    }
-
-    public void setEnd(String end) {
-        this.end = end;
-    }
-
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
 }
