@@ -4,26 +4,42 @@
 
 package domain;
 
+import anotacao.ColunaTabela;
+import anotacao.Tabela;
+import anotacao.TipoChave;
 import dao.Persistente;
 
 import java.math.BigDecimal;
 
+@Tabela("TB_PRODUTO")
 public class Produto implements Persistente {
 
-
+    @ColunaTabela(dbName = "id", setJavaName = "setId")
     private Long id;
 
-
+    @TipoChave("getCodigo")
+    @ColunaTabela(dbName = "codigo", setJavaName = "setCodigo")
     private String codigo;
 
-
+    @ColunaTabela(dbName = "nome", setJavaName = "setNome")
     private String nome;
 
-
+    @ColunaTabela(dbName = "descricao", setJavaName = "setDescricao")
     private String descricao;
 
-
+    @ColunaTabela(dbName = "valor", setJavaName = "setValor")
     private BigDecimal valor;
+
+    @ColunaTabela(dbName = "categoria", setJavaName = "setCategoria")
+    private String categoria;
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
     public String getCodigo() {
         return codigo;
