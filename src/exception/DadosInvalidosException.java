@@ -2,7 +2,7 @@
  * @author Evandro Santos
  */
 
-package dao.exception;
+package exception;
 
 public class DadosInvalidosException extends Exception {
 

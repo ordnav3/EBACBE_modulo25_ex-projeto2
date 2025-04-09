@@ -2,7 +2,7 @@
  * @author Evandro Santos
  */
 
-package dao.anotacao;
+package anotacao;
 
 import java.lang.annotation.*;
 

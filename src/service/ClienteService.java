@@ -1,20 +1,22 @@
 package service;
 
-import dao.ClienteDAO;
 import dao.IClienteDAO;
 import domain.Cliente;
+import exception.DAOException;
+import exception.MaisDeUmRegistroException;
+import exception.TableException;
+import service.generic.GenericService;
 
 /**
  * @author Evandro Santos
  */
 
-public class ClienteService <Cliente, Long> implements IClienteService {
-    private ClienteDAO dao;
+public class ClienteService extends GenericService<Cliente, Long> implements IClienteService {
 
     //private IClienteDAO clienteDAO;
 
     public ClienteService(IClienteDAO clienteDAO) {
-        super();
+        super(clienteDAO);
         //this.clienteDAO = clienteDAO;
     }
 
@@ -23,25 +25,15 @@ public class ClienteService <Cliente, Long> implements IClienteService {
 //		return clienteDAO.cadastrar(cliente);
 //	}
 
-
     @Override
-    public Boolean salvar(domain.Cliente cliente) {
+    public Cliente buscarPorCPF(Long cpf) throws DAOException {
+        try {
+            return this.dao.consultar(cpf);
+        } catch (MaisDeUmRegistroException | TableException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         return null;
-    }
-
-    @Override
-    public domain.Cliente buscarPorCPF(java.lang.Long cpf) {
-        return null;
-    }
-
-    @Override
-    public void excluir(java.lang.Long cpf) {
-
-    }
-
-    @Override
-    public void alterar(domain.Cliente cliente) {
-
     }
 
 //	@Override

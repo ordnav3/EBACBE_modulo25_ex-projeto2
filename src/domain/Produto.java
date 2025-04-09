@@ -4,9 +4,11 @@
 
 package domain;
 
+import dao.Persistente;
+
 import java.math.BigDecimal;
 
-public class Produto{
+public class Produto implements Persistente {
 
 
     private Long id;
